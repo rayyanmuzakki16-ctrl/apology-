@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For You ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #0f0f1a, #1c1c2e);
+    color: #fff;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+.container {
+    padding: 60px 20px;
+}
+
+h1 {
+    font-size: 2.8em;
+    margin-bottom: 10px;
+    animation: fadeIn 2s ease;
+}
+
+p {
+    max-width: 650px;
+    margin: 20px auto;
+    line-height: 1.8;
+    font-size: 1.1em;
+    opacity: 0;
+    animation: fadeIn 3s ease forwards;
+}
+
+button {
+    margin-top: 30px;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    background: #ff4d6d;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+    background: #ff1f4b;
+}
+
+.extra {
+    display: none;
+    margin-top: 30px;
+    font-size: 1.1em;
+    line-height: 1.7;
+    animation: fadeIn 2s ease forwards;
+}
+
+.heart {
+    position: fixed;
+    top: -10px;
+    color: #ff4d6d;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+    }
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Untuk Anggun Tercinta ❤️</h1>
+
+    <p>
+        Aku ga akan pura-pura semuanya baik-baik aja…  
+        karena aku tau aku pernah nyakitin kamu.  
+
+        Dan jujur, itu hal yang terus kepikiran di kepala aku.  
+        Bukan cuma sekali dua kali… tapi sering.  
+    </p>
+
+    <p>
+        Aku sadar, minta maaf itu gampang.  
+        Tapi bikin kamu percaya lagi itu yang susah.  
+
+        Dan aku ngerti kalau kamu masih ragu…  
+        itu wajar banget.  
+    </p>
+
+    <p>
+        Aku ga datang ke kamu buat maksa semuanya balik kayak dulu.  
+        Aku cuma mau pelan-pelan benerin apa yang pernah aku rusak.  
+    </p>
+
+    <button onclick="showMore()">Klik ini kalau kamu mau tau isi hati aku 🤍</button>
+
+    <div class="extra" id="moreText">
+        <p>
+            Aku masih milih kamu.  
+            Bukan karena kebiasaan… tapi karena aku emang mau.  
+        </p>
+
+        <p>
+            Aku ga janji bakal langsung sempurna,  
+            tapi aku janji bakal berubah dan belajar dari kesalahan aku.  
+        </p>
+
+        <p>
+            Kalau kamu butuh waktu, aku bakal tunggu.  
+            Kalau kamu butuh bukti, aku bakal tunjukin.  
+        </p>
+
+        <p>
+            Aku cuma berharap… suatu hari nanti  
+            kamu bisa lihat aku bukan dari kesalahan aku dulu,  
+            tapi dari usaha aku sekarang. ❤️
+        </p>
+    </div>
+</div>
+
+<script>
+function showMore() {
+    document.getElementById("moreText").style.display = "block";
+}
+
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 5000);
+}
+
+setInterval(createHeart, 300);
+</script>
+
+</body>
+</html>
